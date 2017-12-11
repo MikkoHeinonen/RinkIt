@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context="com.example.android.rinkit.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/playerdark" />
+
+        <RelativeLayout
+            android:id="@+id/score_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/alpha_background"
+            android:paddingTop="@dimen/half_margin">
+
+
+            <TextView
+                android:id="@+id/text_home_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="Home"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Game Time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_visitor_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/default_margin"
+                android:text="Visitor"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_home_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/text_home_label"
+                android:layout_below="@id/text_home_label"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_score" />
+
+            <TextView
+                android:id="@+id/text_gametime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_time_label"
+                android:layout_centerHorizontal="true"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_gametime" />
+
+            <TextView
+                android:id="@+id/text_visitor_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/text_visitor_label"
+                android:layout_below="@id/text_visitor_label"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_score" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/penalty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/score_layout"
+            android:background="@color/alpha_background">
+
+            <TextView
+                android:id="@+id/label_home_penalty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="Penalty" />
+
+            <TextView
+                android:id="@+id/label_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Period" />
+
+            <TextView
+                android:id="@+id/label_visitor_penalty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/default_margin"
+                android:text="Penalty" />
+
+            <TextView
+                android:id="@+id/text_home_penalty_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/label_home_penalty"
+                android:layout_below="@id/label_home_penalty"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_penalty" />
+
+            <TextView
+                android:id="@+id/text_home_penalty_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/label_home_penalty"
+                android:layout_below="@id/text_home_penalty_1"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_penalty" />
+
+            <TextView
+                android:id="@+id/text_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_period"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_period" />
+
+            <TextView
+                android:id="@+id/text_visitor_penalty_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/label_visitor_penalty"
+                android:layout_below="@id/label_visitor_penalty"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_penalty" />
+
+            <TextView
+                android:id="@+id/text_visitor_penalty_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/label_visitor_penalty"
+                android:layout_below="@id/text_visitor_penalty_1"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textSize="@dimen/size_penalty" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/scroller_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/history_height"
+            android:layout_below="@id/penalty_layout"
+            android:layout_marginTop="@dimen/half_margin"
+            android:background="@color/alpha_background">
+
+            <TextView
+                android:id="@+id/label_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_text"
+                android:textAlignment="center" />
+
+            <ListView
+                android:id="@+id/mainListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/label_history">
+
+            </ListView>
+
+        </RelativeLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/scroller_view"
+            android:layout_marginBottom="@dimen/half_margin"
+            android:layout_marginTop="@dimen/half_margin">
+
+            <TextView
+                android:id="@+id/label_home_penalty_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="Home penalty"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button_home_penalty_increase"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="+"
+                app:layout_constraintStart_toStartOf="@id/label_home_penalty_buttons"
+                app:layout_constraintTop_toBottomOf="@id/label_home_penalty_buttons" />
+
+            <Button
+                android:id="@+id/button_home_penalty_decrease"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="-"
+                app:layout_constraintStart_toEndOf="@id/button_home_penalty_increase"
+                app:layout_constraintTop_toBottomOf="@id/label_home_penalty_buttons" />
+
+            <TextView
+                android:id="@+id/label_visitor_penalty_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_margin"
+                android:text="Visitor penalty"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/button_visitor_penalty_increase"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/half_margin"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="+"
+                app:layout_constraintEnd_toStartOf="@id/button_visitor_penalty_decrease"
+                app:layout_constraintTop_toBottomOf="@id/label_visitor_penalty_buttons" />
+
+            <Button
+                android:id="@+id/button_visitor_penalty_decrease"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="-"
+                app:layout_constraintEnd_toEndOf="@id/label_visitor_penalty_buttons"
+                app:layout_constraintTop_toBottomOf="@id/label_visitor_penalty_buttons" />
+
+            <TextView
+                android:id="@+id/label_home_goal_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginTop="@dimen/half_margin"
+                android:text="Home goals"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_home_penalty_increase" />
+
+            <Button
+                android:id="@+id/button_home_goal_increase"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="+"
+                app:layout_constraintStart_toStartOf="@id/label_home_penalty_buttons"
+                app:layout_constraintTop_toBottomOf="@id/label_home_goal_buttons" />
+
+            <Button
+                android:id="@+id/button_home_goal_decrease"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="-"
+                app:layout_constraintStart_toEndOf="@id/button_home_penalty_increase"
+                app:layout_constraintTop_toBottomOf="@id/label_home_goal_buttons" />
+
+            <TextView
+                android:id="@+id/label_visitor_goal_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:text="Visitor goals"
+                app:layout_constraintEnd_toEndOf="@id/label_visitor_penalty_buttons"
+                app:layout_constraintTop_toBottomOf="@id/button_visitor_penalty_increase" />
+
+            <Button
+                android:id="@+id/button_visitor_goal_increase"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/half_margin"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="+"
+                app:layout_constraintEnd_toStartOf="@id/button_visitor_penalty_decrease"
+                app:layout_constraintTop_toBottomOf="@id/label_visitor_goal_buttons" />
+
+            <Button
+                android:id="@+id/button_visitor_goal_decrease"
+                android:layout_width="@dimen/small_button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/half_margin"
+                android:background="@drawable/rounded_corners"
+                android:text="-"
+                app:layout_constraintEnd_toEndOf="@id/label_visitor_penalty_buttons"
+                app:layout_constraintTop_toBottomOf="@id/label_visitor_goal_buttons" />
+
+
+            <ImageButton
+                android:id="@+id/button_start"
+                android:layout_width="@dimen/big_button"
+                android:layout_height="@dimen/start_button_height"
+                android:background="@drawable/rounded_corners"
+                android:src="@android:drawable/ic_media_play"
+                android:elevation="@dimen/half_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

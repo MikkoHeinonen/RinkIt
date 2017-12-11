@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+
+    </style>
+
+    <dimen name="size_score">60sp</dimen>
+    <dimen name="size_gametime">60sp</dimen>
+    <dimen name="size_penalty">20sp</dimen>
+    <dimen name="size_period">40sp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="half_margin">8dp</dimen>
+    <dimen name="big_button">96dp</dimen>
+    <dimen name="small_button">48dp</dimen>
+    <dimen name="size_history">10sp</dimen>
+    <dimen name="start_button_height">40dp</dimen>
+    <dimen name="history_height">150dp</dimen>
+
+
+
+</resources>
